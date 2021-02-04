@@ -12,16 +12,10 @@ import SettingView from '@/components/views/Setting.vue';
 import AccessView from '@/components/views/Access.vue';
 import ServerView from '@/components/views/Server.vue';
 import ReposView from '@/components/views/Repos.vue';
-import Home from '@/views/Home.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home,
-  },
   {
     path: '/about',
     name: 'About',

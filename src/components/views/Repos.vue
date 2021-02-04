@@ -8,14 +8,17 @@
         <div v-if="error">
           Found an error
         </div>
-        <div v-else>
-          <div class="col-md-4" v-if="response" v-for="repo in response" >
+        <div v-if="response" >
+          <div class="col-md-4" v-for="(repo, i) in response" :key="i">
             <div class="box box-widget widget-user">
               <div class="widget-user-header bg-aqua-active text-center">
                 <h3 class="widget-user-username center-text">{{repo.name }}</h3>
               </div>
               <div class="widget-user-image">
-                <img class="img-circle" v-bind:src="repo.owner.avatar_url" alt="repo.owner.login + ' Avatar'">
+                <img
+                  class="img-circle"
+                  v-bind:src="repo.owner.avatar_url"
+                  alt="repo.owner.login + ' Avatar'">
               </div>
               <div class="box-footer">
                 <div class="row">

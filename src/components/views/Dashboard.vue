@@ -124,9 +124,9 @@
 
 <script>
 import Chart from 'chart.js';
-import Alert from '../widgets/Alert';
-import InfoBox from '../widgets/InfoBox';
-import ProcessInfoBox from '../widgets/ProcessInfoBox';
+import Alert from '../widgets/Alert.vue';
+import InfoBox from '../widgets/InfoBox.vue';
+import ProcessInfoBox from '../widgets/ProcessInfoBox.vue';
 
 export default {
   name: 'Dashboard',
@@ -139,7 +139,7 @@ export default {
     return {
       generateRandomNumbers(numbers, max, min) {
         const a = [];
-        for (let i = 0; i < numbers; i++) {
+        for (let i = 0; i < numbers; i += 1) {
           a.push(Math.floor(Math.random() * (max - min + 1)) + max);
         }
         return a;

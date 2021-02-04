@@ -11,9 +11,15 @@
             <h3 class="box-title">Visitors Report</h3>
 
             <div class="box-tools pull-right">
-              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              <button
+                type="button"
+                class="btn btn-box-tool"
+                data-widget="collapse"><i class="fa fa-minus"></i>
               </button>
-              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              <button
+                type="button"
+                class="btn btn-box-tool"
+                data-widget="remove"><i class="fa fa-times"></i></button>
             </div>
           </div>
           <!-- /.box-header -->
@@ -26,7 +32,7 @@
               <!-- /.col -->
               <div class="col-md-4">
                 <div class="pad box-pane-right bg-green" style="min-height: 400px">
-                  <div v-for="stat in stats" class="description-block margin-bottom">
+                  <div v-for="(stat, i) in stats" :key="i" class="description-block margin-bottom">
                     <div class="row" data-color="#fff"><i class="fa fa-bar-chart-o fa-3x"></i></div>
                     <h5 class="description-header">{{stat.header}}</h5>
                     <span class="description-text">{{stat.text}}</span>
@@ -39,22 +45,26 @@
           </div>
           <!-- /.box-body -->
         </div>
-        <link rel="stylesheet" href="/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.css" >
+        <link
+          rel="stylesheet"
+          :href="`${publicPath}public/js/plugins/jvectormap/jquery-jvectormap-2.0.3.css`" />
       </div>
     </div>
   </section>
 </template>
 <script>
-import { stats } from '../../demo';
+import { stats } from '@/demo';
 
-const pluginURL = '/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js';
-const mapURL = '/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js';
+const publicPath = process.env.BASE_URL;
+const pluginURL = `${publicPath}public/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js`;
+const mapURL = `${publicPath}/public/js/plugins/jvectormap/jquery-jvectormap-world-mill.js`;
 
 export default {
   name: 'Access',
   data() {
     return {
       stats,
+      publicPath,
     };
   },
   mounted() {

@@ -24,7 +24,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import MessageItem from './MessageItem';
+import MessageItem from './MessageItem.vue';
 
 export default {
   name: 'MessagesMenu',

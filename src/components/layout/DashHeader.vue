@@ -1,7 +1,12 @@
 <template>
   <header class="main-header">
     <span class="logo-mini">
-      <a href="/"><img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive center-block logo"></a>
+      <a href="/">
+        <img
+          :src="`${publicPath}img/copilot-logo-white.svg`"
+          alt="Logo"
+          class="img-responsive center-block logo">
+      </a>
     </span>
     <!-- Header Navbar -->
     <nav class="navbar navbar-static-top" role="navigation">
@@ -25,10 +30,10 @@
 
 <script>
 import { mapState } from 'vuex';
-import MessagesMenu from './MessagesMenu';
-import NotificationsMenu from './NotificationsMenu';
-import TasksMenu from './TasksMenu';
-import UserMenu from './UserMenu';
+import MessagesMenu from './MessagesMenu.vue';
+import NotificationsMenu from './NotificationsMenu.vue';
+import TasksMenu from './TasksMenu.vue';
+import UserMenu from './UserMenu.vue';
 
 export default {
   name: 'DashHeader',
@@ -38,6 +43,9 @@ export default {
     TasksMenu,
     UserMenu,
   },
+  data: () => ({
+    publicPath: process.env.BASE_URL,
+  }),
   props: ['user'],
   computed: {
     ...mapState([

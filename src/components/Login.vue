@@ -1,18 +1,23 @@
 <template>
   <div id="login">
-    <img src="/static/img/logo.png" class="center-block logo">
+    <img :src="`${publicPath}img/logo.png`" class="center-block logo">
 
     <div class="text-center col-sm-12">
       <!-- login form -->
       <form @submit.prevent="checkCreds">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-          <input class="form-control" name="username" placeholder="Username" type="text" v-model="username">
+          <input
+            class="form-control"
+            name="username" placeholder="Username" type="text" v-model="username">
         </div>
 
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-          <input class="form-control" name="password" placeholder="Password" type="password" v-model="password">
+          <input
+            class="form-control"
+            name="password"
+            placeholder="Password" type="password" v-model="password">
         </div>
         <button type="submit" v-bind:class="'btn btn-primary btn-lg ' + loading">Submit</button>
       </form>
@@ -28,8 +33,10 @@ import api from '../api';
 
 export default {
   name: 'Login',
+  // eslint-disable-next-line no-unused-vars
   data(router) {
     return {
+      publicPath: process.env.BASE_URL,
       section: 'Login',
       loading: '',
       username: '',

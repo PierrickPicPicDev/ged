@@ -7,23 +7,31 @@
     <ul class="dropdown-menu">
       <li class="header">
         <div class="row no-margin">
-          <span class="col-xs-12 col-md-6 tab-link" :class="{active: tab === 'new'}" @click="switchTab($event, 'new')">
+          <span
+            class="col-xs-12 col-md-6 tab-link"
+            :class="{active: tab === 'new'}" @click="switchTab($event, 'new')">
               <a href="javascript:;">New</a>
             </span>
-          <span class="col-xs-12 col-md-6 tab-link" :class="{active: tab === 'old'}" @click="switchTab($event, 'old')">
+          <span
+            class="col-xs-12 col-md-6 tab-link"
+            :class="{active: tab === 'old'}" @click="switchTab($event, 'old')">
               <a href="javascript:;">Old</a>
             </span>
         </div>
       </li>
       <li>
         <ul v-if="tab === 'new'" class="menu">
-          <notification-item v-for="notification in newNotifications" :key="notification.id" :notification="notification"></notification-item>
+          <notification-item
+            v-for="notification in newNotifications"
+            :key="notification.id" :notification="notification"></notification-item>
           <li v-if="!newNotifications.length">
             <span class="center-block text-center">There are no new notifications</span>
           </li>
         </ul>
         <ul v-if="tab === 'old'" class="menu">
-          <notification-item v-for="notification in oldNotifications" :key="notification.id" :notification="notification"></notification-item>
+          <notification-item
+            v-for="notification in oldNotifications"
+            :key="notification.id" :notification="notification"></notification-item>
           <li v-if="!oldNotifications.length">
             <span class="center-block text-center">There are no old notifications</span>
           </li>
@@ -41,7 +49,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import NotificationItem from './NotificationItem';
+import NotificationItem from './NotificationItem.vue';
 
 export default {
   name: 'NotificationsMenu',
@@ -66,9 +74,11 @@ export default {
   },
   methods: {
     markAllAsRead() {
+      // eslint-disable-next-line no-restricted-globals
       event.stopPropagation();
 
       this.userInfo.notifications.filter((n) => !n.readAt).forEach((notification) => {
+        // eslint-disable-next-line no-param-reassign
         notification.readAt = new Date().toUTCString;
       });
     },
@@ -93,14 +103,17 @@ export default {
   text-align: center;
   cursor: pointer;
 }
-.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span.tab-link a {
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span.tab-link a
+{
   color: #444;
 }
-.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span.tab-link.active {
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu
+li.header span.tab-link.active {
   font-weight: bold;
   border-bottom: 2px solid #3c8dbc;
 }
-.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span:hover.tab-link > a {
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu
+li.header span:hover.tab-link > a {
   color: #3c8dbc !important;
 }
 .navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li > ul.menu {

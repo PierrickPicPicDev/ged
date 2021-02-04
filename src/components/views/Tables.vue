@@ -85,14 +85,72 @@
 
               <div class="row">
                 <div class="col-sm-12 table-responsive">
-                  <table aria-describedby="example1_info" role="grid" id="example1" class="table table-bordered table-striped dataTable">
+                  <table
+                    aria-describedby="example1_info"
+                    role="grid"
+                    id="example1" class="table table-bordered table-striped dataTable">
                     <thead>
                       <tr role="row">
-                        <th aria-label="Rendering engine: activate to sort column descending" aria-sort="ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Rendering engine</th>
-                        <th aria-label="Browser: activate to sort column ascending" style="width: 207px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Browser</th>
-                        <th aria-label="Platform(s): activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Platform(s)</th>
-                        <th aria-label="Engine version: activate to sort column ascending" style="width: 142px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Engine version</th>
-                        <th aria-label="CSS grade: activate to sort column ascending" style="width: 101px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">CSS grade</th>
+                        <th
+                          aria-label="Rendering engine: activate to sort column descending"
+                          aria-sort="ascending"
+                          style="width: 167px;"
+                          colspan="1"
+                          rowspan="1"
+                          aria-controls="example1"
+                          tabindex="0" class="sorting_asc">Rendering engine</th>
+                        <th
+                          aria-label="Browser: activate to sort column ascending"
+                          style="width: 207px;"
+                          colspan="1"
+                          rowspan="1"
+                          aria-controls="example1"
+                          tabindex="0"
+                          class="sorting">Browser</th>
+                        <th
+                          aria-label="Platform(s):
+                          activate
+                          to
+                          sort
+                          column
+                          ascending"
+                          style="width:
+                          182px;"
+                          colspan="1"
+                          rowspan="1"
+                          aria-controls="example1"
+                          tabindex="0"
+                          class="sorting">Platform(s)</th>
+                        <th
+                          aria-label="Engine
+                          version:
+                          activate
+                          to
+                          sort
+                          column
+                          ascending"
+                          style="width:
+                          142px;"
+                          colspan="1"
+                          rowspan="1"
+                          aria-controls="example1"
+                          tabindex="0"
+                          class="sorting">Engine version</th>
+                        <th
+                          aria-label="CSS
+                          grade:
+                          activate
+                          to
+                          sort
+                          column
+                          ascending"
+                          style="width:
+                          101px;"
+                          colspan="1"
+                          rowspan="1"
+                          aria-controls="example1"
+                          tabindex="0"
+                          class="sorting">CSS grade</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -221,12 +279,12 @@ export default {
 @import url('/static/js/plugins/datatables/jquery.dataTables.min.css');
 */
 
-@import url('/static/js/plugins/datatables/dataTables.bootstrap.css');
+@import url('/js/plugins/datatables/dataTables.bootstrap.css');
 
 table.dataTable thead .sorting:after,
 table.dataTable thead .sorting_asc:after,
 table.dataTable thead .sorting_desc:after {
-  font-family: 'FontAwesome';
+  font-family: 'FontAwesome',serif;
 }
 
 table.dataTable thead .sorting:after {

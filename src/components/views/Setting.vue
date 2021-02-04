@@ -16,7 +16,11 @@
                 <span class="input-group-addon">
                   <i class="fa fa-fw fa-calendar"></i>
                 </span>
-                <datepicker :readonly="true" format="MMM/D/YYYY" id="dateInput" width="100%"></datepicker>
+                <datepicker
+                  :readonly="true"
+                  format="MMM/D/YYYY"
+                  id="dateInput"
+                  width="100%"></datepicker>
               </div>
               <br />
               <br />
@@ -54,13 +58,19 @@
               <!-- Success/Error heads up input -->
               <h4>With border indicator</h4>
               <div class="form-group has-success">
-                <label class="control-label" for="inputSuccess"><i class="fa fa-fw fa-check"></i> Input with success</label>
+                <label
+                  class="control-label"
+                  for="inputSuccess"><i class="fa fa-fw fa-check"></i> Input with success</label>
                 <input class="form-control" id="inputSuccess" placeholder="Enter ..." type="text">
                 <span class="help-block">Help block with success</span>
               </div>
               <br />
               <div class="form-group has-error">
-                <label class="control-label" for="inputError"><i class="fa fa-fw fa-times-circle-o"></i> Input with error</label>
+                <label
+                  class="control-label"
+                  for="inputError">
+                  <i class="fa fa-fw fa-times-circle-o"></i> Input with error
+                </label>
                 <input class="form-control" id="inputError" placeholder="Enter ..." type="text">
                 <span class="help-block">Help block with error</span>
               </div>
@@ -112,9 +122,9 @@ export default {
     },
   },
   methods: {
-    clearInput(vueModel) {
-      vueModel = '';
-    },
+    // clearInput(vueModel) {
+    // vueModel = '';
+    // },
   },
 };
 </script>

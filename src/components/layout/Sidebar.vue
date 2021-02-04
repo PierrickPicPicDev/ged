@@ -7,11 +7,11 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img :src="user.avatar" />
+          <img :src="user.avatar"/>
         </div>
         <div class="pull-left info">
           <div>
-            <p class="white">{{user.displayName}}</p>
+            <p class="white">{{ user.displayName }}</p>
           </div>
           <a href="javascript:;">
             <i class="fa fa-circle text-success"></i> Online
@@ -23,13 +23,15 @@
       <form v-on:submit.prevent class="sidebar-form" id="searchForm">
         <div class="input-group" id="searchContainer">
           <span class="input-group-btn">
-            <input type="text"
-            name="search"
-            id="search"
-            class="search form-control"
-            data-toggle="hideseek" p
-            laceholder="Search Menus"
-            data-list=".sidebar-menu">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              class="search form-control"
+              data-toggle="hideseek" p
+              laceholder="Search Menus"
+              data-list=".sidebar-menu"
+            />
             <button type="submit" name="search" id="search-btn" class="btn btn-flat">
               <i class="fa fa-search"></i>
             </button>
@@ -39,14 +41,14 @@
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->
-      <sidebar-menu />
+      <sidebar-menu/>
       <!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
   </aside>
 </template>
 <script>
-import SidebarMenu from './SidebarMenu';
+import SidebarMenu from './SidebarMenu.vue';
 
 export default {
   name: 'Sidebar',
@@ -60,18 +62,22 @@ export default {
   },
 };
 </script>
-<style scope="local">
+
+<style scoped>
 .user-panel .image img {
   border-radius: 50%;
 }
+
 #searchForm {
   padding-left: 0em;
   padding-right: 0em;
 }
+
 #searchContainer {
   height: 100%;
   padding-bottom: 0em;
 }
+
 #search {
   width: 80%;
   float: right;

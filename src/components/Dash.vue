@@ -61,7 +61,8 @@ export default {
     user() {
       return {
         displayName: faker.name.findName(),
-        avatar: faker.image.avatar(),
+        avatar: 'https://picsum.photos/300/300/?blur',
+        // avatar: faker.image.avatar(),
         roles: [faker.name.jobTitle(), faker.name.jobTitle()],
       };
     },
